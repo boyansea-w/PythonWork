@@ -1,0 +1,17 @@
+推荐格式化工具
+    VSCode 支持多种 Python 格式化工具，常见的包括：
+    black：风格统一，强制格式化
+    autopep8：遵循 PEP8 标准
+    yapf：Google 风格的格式化工具
+你可以在 VSCode 设置中指定使用哪一个：
+设置方法：
+    打开命令面板：Ctrl + Shift + P（或 macOS 上 Cmd + Shift + P）
+    输入并选择：Preferences: Open Settings (JSON)
+添加如下配置：
+    "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnSave": true
+    }
+
+如果你还没安装 black，可以在终端运行：
+py -m pip install black
