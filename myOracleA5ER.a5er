@@ -1,0 +1,45 @@
+﻿# A5:ER FORMAT:19
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.20.4 Copyright © 1997 - 2025 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=myER
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=10
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSTypeName=Oracle Database
+CommonField="sakusei_ymd_hms","作成時間","@DATETIME",,,"","",$FFFFFFFF
+CommonField="sakusei_program_id","作成プログラムID","@CHAR",,,"","",$FFFFFFFF
+CommonField="sakusei_user_id","作成者ID","@CHAR",,,"","",$FFFFFFFF
+CommonField="update_ymd_hms","更新時間","@DATETIME",,,"","",$FFFFFFFF
+CommonField="update_program_id","更新プログラムID","@CHAR",,,"","",$FFFFFFFF
+CommonField="update_user_id","更新者ID","@CHAR",,,"","",$FFFFFFFF
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=1
