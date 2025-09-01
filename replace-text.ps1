@@ -17,3 +17,7 @@ $updatedContent = $content -replace "1234", "9999"
 $writer = New-Object System.IO.StreamWriter($targetPath, $false, $utf8NoBom)
 $writer.Write($updatedContent)
 $writer.Close()
+
+
+#执行
+# powershell -ExecutionPolicy Bypass -File "D:\work\PythonWork\replace-text.ps1"
