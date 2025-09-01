@@ -72,3 +72,33 @@ Write-Host "Hello, $name! You are $age years old."
 
 🚀 main.ps1（调用脚本并传参）
 powershell
+
+
+
+# Step 1: 定义数组 schema 和 schemaName（穷举法）
+$schema = @("P001", "P002", "P003", "P004", "P005", "P006", "P007", "P008", "P009", "P010",
+            "P011", "P012", "P013", "P014", "P015", "P016", "P017", "P018", "P019", "P020")
+
+$schemaName = @("P001_01", "P002_01", "P003_01", "P004_01", "P005_01", "P006_01", "P007_01", "P008_01", "P009_01", "P010_01",
+                "P011_01", "P012_01", "P013_01", "P014_01", "P015_01", "P016_01", "P017_01", "P018_01", "P019_01", "P020_01")
+
+# Step 2: 循环 schema 数组
+for ($i = 0; $i -lt $schema.Length; $i++) {
+    $currentSchema = $schema[$i]
+    $currentSchemaName = $schemaName[$i]
+
+    # Step 3: 遍历 inputFile 文件夹中的所有文件
+    $inputFolder = "D:\work\PythonWork\inputFile"
+    $outputFolder = "D:\work\PythonWork\onputFile"
+
+    Get-ChildItem -Path $inputFolder -Filter "LP_*_W001_01.txt" | ForEach-Object {
+        $originalFile = $_.FullName
+        $newFileName = $_.Name -replace "W001_01", $currentSchemaName
+        $newFilePath = Join-Path $outputFolder $newFileName
+
+        # Step 4: 读取原文件内容并以无 BOM 的 UTF-8 格式写入新文件
+        $content = Get-Content -Path $originalFile -Raw
+        [System.IO.File]::WriteAllText($newFilePath, $content, [System.Text.Encoding]::UTF8)
+    }
+}
+
